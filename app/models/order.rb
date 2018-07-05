@@ -6,4 +6,14 @@ class Order < ApplicationRecord
     update(price: total_price)
   end
 
+  def process_payment(token, email)
+    customer = Stripe::Customer.create email: email,
+                                       card: token
+
+    Stripe::Charge.create customer: customer.id,
+                          amount: (price * 100).to_i,
+                          description: 'Produit',
+                          currency: 'eur'
+
+  end
 end

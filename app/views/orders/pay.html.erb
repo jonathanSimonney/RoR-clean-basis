@@ -1,0 +1,14 @@
+form de paiement :
+
+<%= form_for @order, html: { class: "basic-grey" } do |f| %>
+  <div class="actions">
+    <script
+      src="https://checkout.stripe.com/checkout.js"
+      class="stripe-button"
+      data-key="<%= Rails.application.secrets.stripe_publishable_key %>"
+      data-name="Demo Site"
+      data-description="2 widgets ($20.00)"
+      data-amount="<%= @order.price * 100 %>">
+    </script>
+  </div>
+<% end %>

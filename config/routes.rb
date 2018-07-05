@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/:id/pay', to:'orders#pay', as:'order_pay'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users

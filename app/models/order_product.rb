@@ -6,6 +6,8 @@ class OrderProduct < ApplicationRecord
   before_save :set_price
   after_save :update_order
 
+  delegate :price, :name, to: :product
+
   def set_price
     self.unit_price = product.price
     self.total_price = product.price * quantity

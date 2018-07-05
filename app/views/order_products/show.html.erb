@@ -1,2 +1,4 @@
 <%= @order_product.id %>
 Quantité : <%= @order_product.quantity %>
+
+<%= link_to "Procéder au paiement", @order_product.order, class: "btn btn-primary" %>

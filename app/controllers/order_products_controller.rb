@@ -8,7 +8,7 @@ class OrderProductsController < ApplicationController
   end
 
   def show
-    @order_product = OrderProduct.find_by(id: params[:id])
+    @order_product = current_user.order_products.find_by(id: params[:id])
   end
 
   private

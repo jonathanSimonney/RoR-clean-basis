@@ -4,7 +4,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= link_to product.name, product %></h5>
       <p class="card-text">  <%= product.description %></p>
-      <a href="<%= product %>" class="btn btn-primary"><%= number_to_currency(product.price) %></a>
+      <span class="btn btn-primary"><%= number_to_currency(product.price) %></span>
     </div>
   </div>
 <% end %>

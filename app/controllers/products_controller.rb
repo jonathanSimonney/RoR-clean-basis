@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def show
     # @product = Product.where(id: params[:id]).first
     @product = Product.find_by(id: params[:id])
+    @order_product = OrderProduct.new()
   end
 
 end

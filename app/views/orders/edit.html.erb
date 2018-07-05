@@ -1,0 +1,5 @@
+<%= @order.price %>
+<%= @order.paid %>
+<% @order.order_products.each do |order_product| %>
+  <%= render partial: 'order_products/recap.html.erb', locals: {order_product: order_product} %>
+<% end %>

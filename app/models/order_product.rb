@@ -4,7 +4,7 @@ class OrderProduct < ApplicationRecord
   belongs_to :order
   
   before_save :set_price
-  before_save :update_order
+  after_save :update_order
 
   def set_price
     self.unit_price = product.price

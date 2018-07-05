@@ -1,5 +1,7 @@
-<%= number_to_currency(@order.price) %>
+montant : <%= number_to_currency(@order.price) %>
 <hr>
-<%= @order.paid %>
-<hr>
-<%= @order.status %>
+<% if @order.paid %>
+  déjà réglé
+<% else %>
+  <%= link_to "payer", edit_order_path %>
+<% end %>
